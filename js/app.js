@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	console.log("ready!");
   
@@ -19,7 +18,8 @@ $(document).ready(function(){
   
  $(".button").click(function(event) {
    event.preventDefault();
-  var guess = $(".text").val();
+   var guess = $(".text").val();
+   count++;
    $("#count").html(count);
     
    
@@ -79,24 +79,21 @@ $(document).ready(function(){
   if(guess.length >= 1 && guess <= 100)
     {
       $("#guessList").append("<li>" + guess + "</li>");
-      $(".text").val("");
-      count++;                    
+      $(".text").val("");    
     }
     else 
     {
-      alert("Please enter a number between 1 and 100");
-      count - 1;
+      count--;
+      alert("Please enter a number between 1 and 100");  
     }
     
   });
   
-  
-  //Generates new number when +new is clicked   
+    
   $(".new").click(function(e){
     location.reload(false);
   });
   
 
 });
-
 
