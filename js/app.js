@@ -19,9 +19,6 @@ $(document).ready(function(){
  $(".button").click(function(event) {
    event.preventDefault();
    var guess = $(".text").val();
-   count++;
-   $("#count").html(count);
-    
    
   if( guess == correctAnswer) {
       alert("YOU'VE LITERALLY CAUGHT ON FIRE!!! SOMEONE GET A FIRE EXTINGUISHER!!!(you win)");
@@ -78,12 +75,13 @@ $(document).ready(function(){
    
   if(guess.length >= 1 && guess <= 100)
     {
+      count++;
+      $("#count").html(count);
       $("#guessList").append("<li>" + guess + "</li>");
       $(".text").val("");    
     }
     else 
     {
-      count--;
       alert("Please enter a number between 1 and 100");  
     }
     
