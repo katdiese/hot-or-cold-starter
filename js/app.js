@@ -19,8 +19,7 @@ $(document).ready(function(){
  $(".button").click(function(event) {
    event.preventDefault();
    var guess = $(".text").val();
-   count++;
-   $("#count").html(count);
+//   count++;
     
    
   if( guess == correctAnswer) {
@@ -78,12 +77,15 @@ $(document).ready(function(){
    
   if(guess.length >= 1 && guess <= 100)
     {
+      count++;
+      $("#count").html(count);
       $("#guessList").append("<li>" + guess + "</li>");
       $(".text").val("");    
     }
     else 
     {
-      count--;
+//      count--;
+//      $("#count").html(count);
       alert("Please enter a number between 1 and 100");  
     }
     
